@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { LoginPage } from './LoginPage';
+import LoginPage from './LoginPage';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';

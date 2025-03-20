@@ -1,1 +1,1 @@
-export { LoginPage } from './ui/Login/LoginPage';
+export { LoginPageAsync as LoginPage } from './ui/Login/LoginPage.async';

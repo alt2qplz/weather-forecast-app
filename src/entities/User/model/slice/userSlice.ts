@@ -22,6 +22,9 @@ const userSlice = createSlice({
         state.authData = action.payload;
         state._inited = true;
       })
+      .addCase(initAuthData.rejected, (state) => {
+        state._inited = true;
+      })
       .addCase(userLogout.fulfilled, (state) => {
         state.authData = undefined;
       });

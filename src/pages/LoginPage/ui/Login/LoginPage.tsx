@@ -11,7 +11,7 @@ interface LoginProps {
   className?: string;
 }
 
-export const LoginPage = memo((props: LoginProps) => {
+const LoginPage = memo((props: LoginProps) => {
   const { className } = props;
   const navigate = useNavigate();
   const auth = useSelector(getUserAuthData);
@@ -32,3 +32,5 @@ export const LoginPage = memo((props: LoginProps) => {
 });
 
 LoginPage.displayName = 'LoginPage';
+
+export default LoginPage;
