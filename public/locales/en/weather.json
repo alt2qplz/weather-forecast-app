@@ -1,0 +1,22 @@
+{
+  "Ясно": "Clear",
+  "Преимущественно ясно": "Mostly Clear",
+  "Переменная облачность": "Partly Cloudy",
+  "Пасмурно": "Overcast",
+  "Лёгкая морось": "Light Drizzle",
+  "Умеренная морось": "Moderate Drizzle",
+  "Сильная морось": "Heavy Drizzle",
+  "Слабый дождь": "Light Rain",
+  "Умеренный дождь": "Moderate Rain",
+  "Сильный дождь": "Heavy Rain",
+  "Слабый снег": "Light Snow",
+  "Умеренный снег": "Moderate Snow",
+  "Сильный снегопад": "Heavy Snow",
+  "Слабый ливень": "Light Shower",
+  "Умеренный ливень": "Moderate Shower",
+  "Сильный ливень": "Heavy Shower",
+  "Гроза": "Thunderstorm",
+  "Гроза с градом": "Thunderstorm with Hail",
+  "Сильная гроза с градом": "Severe Thunderstorm with Hail",
+  "Неизвестная погода": "Unknown Weather"
+}

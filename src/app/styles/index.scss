@@ -1,0 +1,22 @@
+@import "reset";
+@import "fonts";
+@import "variables/global";
+@import "themes/normal";
+@import "themes/dark";
+
+body {
+  font: var(--font-m);
+  color: var(--main-text-color);
+}
+
+.app {
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.content-page {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  height: calc(100vh - var(--footer-height) - var(--header-height));
+}
