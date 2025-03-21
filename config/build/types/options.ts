@@ -4,10 +4,10 @@ export type BuildPaths = {
   entry: string,
   build: string,
   html: string,
-  src: string
-  locales: string;
-  buildLocales: string;
-  favicon?: string,
+  src: string,
+  locales: string,
+  buildLocales: string,
+  favicon?: string
 }
 
 export interface BuildEnv {

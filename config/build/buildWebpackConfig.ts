@@ -4,13 +4,15 @@ import { buildPlugins } from './buildPlugins';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
+import { buildOptimization } from './buildOptimization';
 
 export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration => {
   return {
     mode: options.mode,
     entry: options.paths.entry,
+    optimization: buildOptimization(options),
     output: {
-      filename: '[name].[contenthash].js',
+      filename: 'js/[name].[contenthash].js',
       path: options.paths.build,
       clean: true,
       publicPath: '/'

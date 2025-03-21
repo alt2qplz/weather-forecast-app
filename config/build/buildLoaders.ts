@@ -1,38 +1,42 @@
-import { BuildOptions } from './types/options';
 import webpack from 'webpack';
-import { buildCssLoader } from './loaders/buildCssLoader';
-import { buildBabelLoader } from './loaders/buildBabelLoader';
+import { BuildOptions } from './types/options';
+import { buildCssLoader } from './loaders/css/buildCssLoader';
+import { buildSvgLoader } from './loaders/svg/buildSvgLoader';
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack']
-  };
-
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff|woff2)$/i, // картинки и шрифты
-    use: [
-      {
-        loader: 'file-loader',
-      },
-    ],
-  };
-
+  const svgLoader: webpack.RuleSetRule = buildSvgLoader();
   const cssLoader = buildCssLoader(options.isDev);
 
-  const typeScriptLoader = {
-    test: /\.tsx?$/, // регулярка для поиска файлов, которые надо пропустить через лоадер regex101.com
-    use: 'ts-loader', // сам лоадер
-    exclude: /node_modules/, // исключаем папку node_modules
+  const imgLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    type: 'asset/resource',
+    generator: {
+      filename: 'img/[name][ext]'
+    }
   };
 
-  const babelLoader = buildBabelLoader(options);
+  const fontsLoader = {
+    test: /\.(woff|woff2)$/i,
+    type: 'asset/resource',
+    generator: {
+      filename: 'fonts/[name][ext]'
+    }
+  };
+
+  const esbuildLoader = {
+    test: /\.(js|tsx?)$/,
+    exclude: /node_modules/,
+    loader: 'esbuild-loader',
+    options: {
+      target: 'es2015'
+    }
+  };
 
   return [
+    imgLoader,
+    fontsLoader,
     svgLoader,
-    fileLoader,
-    babelLoader,
-    typeScriptLoader,
+    esbuildLoader,
     cssLoader
   ];
 };
